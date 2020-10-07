@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  pulseaudio:
+    build: .
+    image: pulseaudio
+    environment:
+      - PULSE_SERVER=docker.for.mac.localhost
+    volumes:
+      - type: bind
+        source: ~/.config/pulse
+        target: /root/.config/pulse
